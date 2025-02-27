@@ -21,7 +21,7 @@ module "fe-webapsvcplan" {
   sku_name   = "P0v3"
 }
 
-#Front-End WebApp
+#Front-End WebApp 
 module "fe-webapp" {
   source        = "./modules/windows-webap"
   webapp_name   = var.fe_webapi_name
@@ -32,6 +32,7 @@ module "fe-webapp" {
 
 }
 
+#VNET Intergration with FronEnd WebApp
 resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
   app_service_id = module.fe-webapp.app_service_id
   subnet_id      = azurerm_subnet.front-integrationsubnet.id
