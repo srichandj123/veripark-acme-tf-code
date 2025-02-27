@@ -7,7 +7,7 @@ resource "azurerm_subnet" "snet" {
   virtual_network_name = var.vnet_name
   address_prefixes     = var.subnets[count.index].address_prefixes
   dynamic "delegation" {
-    for_each = lookup(var.subnets[count.index], "delegations", [])
+    for_each = can(var.subnets[count.index].delegations) ? var.subnets[count.index].delegations : []
     content {
       name = delegation.value.name
 
