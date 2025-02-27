@@ -1,15 +1,15 @@
-# resource "azurerm_subnet" "front-integrationsubnet" {
-#   name                 = "integrationsubnet"
-#   resource_group_name  = module.rg.rg_name
-#   virtual_network_name = module.prodvnet.vnet_name
-#   address_prefixes     = ["10.0.1.0/24"]
-#   delegation {
-#     name = "delegation"
-#     service_delegation {
-#       name = "Microsoft.Web/serverFarms"
-#     }
-#   }
-# }
+resource "azurerm_subnet" "front-integrationsubnet" {
+  name                 = "integrationsubnet"
+  resource_group_name  = module.rg.rg_name
+  virtual_network_name = module.prodvnet.vnet_name
+  address_prefixes     = ["10.0.1.0/24"]
+  delegation {
+    name = "delegation"
+    service_delegation {
+      name = "Microsoft.Web/serverFarms"
+    }
+  }
+}
 
 #Front-End App SVC plan
 module "fe-webapsvcplan" {
@@ -34,5 +34,5 @@ module "fe-webapp" {
 
 resource "azurerm_app_service_virtual_network_swift_connection" "vnetintegrationconnection" {
   app_service_id = module.fe-webapp.app_service_id
-  subnet_id      = module.subnet.snet_id[0]
+  subnet_id      = azurerm_subnet.front-integrationsubnet.id
 }

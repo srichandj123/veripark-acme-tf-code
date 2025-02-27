@@ -25,47 +25,17 @@ module "subnet" {
   source = "./modules/subnet"
   subnets = [
     {
-      snet_name        = "frondend-subnet"
-      address_prefixes = ["10.0.1.0/24"]
-      delegations = [
-        {
-          name = "webdelegation"
-          service_delegation = {
-            name = "Microsoft.Web/serverFarms"
-
-          }
-        }
-      ]
-    },
-    {
       snet_name        = "middleware-subnet"
       address_prefixes = ["10.0.2.0/24"]
-      delegations = [
-        {
-          name = null
-          service_delegation = {
-            name = null
-
-          }
-        }
-      ]
     },
     {
       snet_name        = "data-subnet"
       address_prefixes = ["10.0.3.0/24"]
-      delegations = [
-        {
-          name = null
-          service_delegation = {
-            name = null
-
-          }
-        }
-      ]
     }
   ]
   rg_name   = module.rg.rg_name
   vnet_name = module.prodvnet.vnet_name
+
 }
 
 #User assigned managed identity -KV

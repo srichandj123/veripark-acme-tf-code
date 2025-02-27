@@ -16,14 +16,9 @@ variable "subnets" {
       {
         snet_name        = string,       # Name of the subnet
         address_prefixes = list(string), # Subnet Address Prefixes
-        delegations = optional(list(object({
-          name = string
-          service_delegation = object({
-            name = string
-          })
-        })))
       }
     )
   )
   default = []
 }
+
