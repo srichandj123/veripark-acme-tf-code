@@ -23,13 +23,13 @@ variable "subnets" {
 }
 
 #Delegation Name
-variable "delegationname" {
+variable "delegation_name" {
   type    = string
   default = ""
 }
 
-#Delegation Name
-variable "delegationsvc" {
+#Delegation Service
+variable "delegation_service" {
   type    = string
   default = ""
 }

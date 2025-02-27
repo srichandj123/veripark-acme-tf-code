@@ -7,9 +7,9 @@ resource "azurerm_subnet" "snet" {
   virtual_network_name = var.vnet_name
   address_prefixes     = var.subnets[count.index].address_prefixes
   delegation {
-    name = var.delegationname
+    name = var.subnets[count.index].delegation_name
     service_delegation {
-      name = var.delegationsvc
+      name = var.subnets[count.index].delegation_service
     }
   }
 }

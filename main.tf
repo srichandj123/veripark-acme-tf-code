@@ -25,10 +25,10 @@ module "subnet" {
   source = "./modules/subnet"
   subnets = [
     {
-      snet_name        = "frondend-subnet"
-      address_prefixes = ["10.0.1.0/24"]
-      delegationname   = "webdelegation"
-      delegationsvc    = "Microsoft.Web/serverFarms"
+      snet_name          = "frondend-subnet"
+      address_prefixes   = ["10.0.1.0/24"]
+      delegation_name    = "webdelegation"
+      delegation_service = "Microsoft.Web/serverFarms"
     },
     {
       snet_name        = "middleware-subnet"
