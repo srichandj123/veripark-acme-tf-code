@@ -40,10 +40,28 @@ module "subnet" {
     {
       snet_name        = "middleware-subnet"
       address_prefixes = ["10.0.2.0/24"]
+      delegations = [
+        {
+          name = null
+          service_delegation = {
+            name = null
+
+          }
+        }
+      ]
     },
     {
       snet_name        = "data-subnet"
       address_prefixes = ["10.0.3.0/24"]
+      delegations = [
+        {
+          name = null
+          service_delegation = {
+            name = null
+
+          }
+        }
+      ]
     }
   ]
   rg_name   = module.rg.rg_name
