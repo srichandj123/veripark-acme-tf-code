@@ -27,12 +27,8 @@ module "subnet" {
     {
       snet_name        = "frondend-subnet"
       address_prefixes = ["10.0.1.0/24"]
-      delegation = {
-        name = "delegation"
-        service_delegation = {
-          name = "Microsoft.Web/serverFarms"
-        }
-      }
+      delegationname   = "webdelegation"
+      delegationsvc    = "Microsoft.Web/serverFarms"
     },
     {
       snet_name        = "middleware-subnet"
