@@ -14,22 +14,12 @@ variable "subnets" {
   type = list(
     object(
       {
-        snet_name        = string,       # Name of the subnet
-        address_prefixes = list(string), # Subnet Address Prefixes
+        snet_name          = string,       # Name of the subnet
+        address_prefixes   = list(string), # Subnet Address Prefixes
+        delegation_name    = string        # Delegation Name
+        delegation_service = string        # Delegation Service
       }
     )
   )
   default = []
-}
-
-#Delegation Name
-variable "delegation_name" {
-  type    = string
-  default = ""
-}
-
-#Delegation Service
-variable "delegation_service" {
-  type    = string
-  default = ""
 }
