@@ -25,22 +25,25 @@ module "subnet" {
   source = "./modules/subnet"
   subnets = [
     {
-      snet_name          = "frondend-subnet"
-      address_prefixes   = ["10.0.1.0/24"]
-      delegation_name    = "webdelegation"
-      delegation_service = "Microsoft.Web/serverFarms"
+      snet_name        = "frondend-subnet"
+      address_prefixes = ["10.0.1.0/24"]
+      delegations = [
+        {
+          name = "webdelegation"
+          service_delegation = {
+            name = "Microsoft.Web/serverFarms"
+
+          }
+        }
+      ]
     },
     {
-      snet_name          = "middleware-subnet"
-      address_prefixes   = ["10.0.2.0/24"]
-      delegation_name    = null
-      delegation_service = null
+      snet_name        = "middleware-subnet"
+      address_prefixes = ["10.0.2.0/24"]
     },
     {
-      snet_name          = "data-subnet"
-      address_prefixes   = ["10.0.3.0/24"]
-      delegation_name    = null
-      delegation_service = null
+      snet_name        = "data-subnet"
+      address_prefixes = ["10.0.3.0/24"]
     }
   ]
   rg_name   = module.rg.rg_name

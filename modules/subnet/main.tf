@@ -6,10 +6,14 @@ resource "azurerm_subnet" "snet" {
   resource_group_name  = var.rg_name
   virtual_network_name = var.vnet_name
   address_prefixes     = var.subnets[count.index].address_prefixes
-  delegation {
-    name = var.subnets[count.index].delegation_name
-    service_delegation {
-      name = var.subnets[count.index].delegation_service
+  dynamic "delegation" {
+    for_each = lookup(var.subnets[count.index], "delegations", [])
+    content {
+      name = delegation.value.name
+
+      service_delegation {
+        name = delegation.value.service_delegation.name
+      }
     }
   }
 }

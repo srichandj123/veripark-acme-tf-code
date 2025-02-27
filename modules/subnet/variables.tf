@@ -14,10 +14,14 @@ variable "subnets" {
   type = list(
     object(
       {
-        snet_name          = string,       # Name of the subnet
-        address_prefixes   = list(string), # Subnet Address Prefixes
-        delegation_name    = string        # Delegation Name
-        delegation_service = string        # Delegation Service
+        snet_name        = string,       # Name of the subnet
+        address_prefixes = list(string), # Subnet Address Prefixes
+        delegations = optional(list(object({
+          name = string
+          service_delegation = object({
+            name = string
+          })
+        })))
       }
     )
   )
