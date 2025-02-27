@@ -22,3 +22,14 @@ variable "subnets" {
   default = []
 }
 
+#Delegation Name
+variable "delegationname" {
+  type    = string
+  default = ""
+}
+
+#Delegation Name
+variable "delegationsvc" {
+  type    = string
+  default = ""
+}
