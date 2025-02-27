@@ -31,12 +31,16 @@ module "subnet" {
       delegation_service = "Microsoft.Web/serverFarms"
     },
     {
-      snet_name        = "middleware-subnet"
-      address_prefixes = ["10.0.2.0/24"]
+      snet_name          = "middleware-subnet"
+      address_prefixes   = ["10.0.2.0/24"]
+      delegation_name    = null
+      delegation_service = null
     },
     {
-      snet_name        = "data-subnet"
-      address_prefixes = ["10.0.3.0/24"]
+      snet_name          = "data-subnet"
+      address_prefixes   = ["10.0.3.0/24"]
+      delegation_name    = null
+      delegation_service = null
     }
   ]
   rg_name   = module.rg.rg_name
