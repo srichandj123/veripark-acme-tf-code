@@ -1,4 +1,4 @@
-#Resource Group name
+#Resource Group Name
 variable "rg_name" {
   type    = string
   default = ""

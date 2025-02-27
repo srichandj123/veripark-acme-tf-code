@@ -1,6 +1,6 @@
 terraform {
   required_version = "~> 1.9"
-  #Used Terraform Cloud to deploy the Terraform Code
+  #Terraform Cloud block to deploy the Terraform Code
   cloud {
     organization = "jakka"
     workspaces {

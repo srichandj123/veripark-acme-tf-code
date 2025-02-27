@@ -1,4 +1,4 @@
-#name of the svc plan
+#Name of the svc plan
 variable "apsvc_name" {
   type    = string
   default = ""

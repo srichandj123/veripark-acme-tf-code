@@ -15,7 +15,7 @@ resource "azurerm_mssql_database" "mssqldb" {
   server_id    = azurerm_mssql_server.mssql.id
   collation    = "SQL_Latin1_General_CP1_CI_AS"
   license_type = "LicenseIncluded"
-  sku_name     = "P2"
+  sku_name     = var.mssqlsku
   tags         = module.rg.tags
   identity {
     type         = "UserAssigned"

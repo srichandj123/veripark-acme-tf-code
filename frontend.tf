@@ -18,7 +18,7 @@ module "fe-webapsvcplan" {
   rg_name    = module.rg.rg_name
   location   = module.rg.location
   os_type    = "Windows"
-  sku_name   = "P0v3"
+  sku_name   = var.fe_webapi_sku
 }
 
 #Front-End WebApp 

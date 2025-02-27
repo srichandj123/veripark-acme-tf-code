@@ -4,7 +4,7 @@ module "rg" {
   rg_name  = var.rg_name
   location = var.location
   tags = {
-    Application = "E-Commerce Web Api"
+    Application = "E-Commerce Web API"
     Owner       = "Acme Corp"
     GL          = "9999"
   }
@@ -38,7 +38,7 @@ module "subnet" {
 
 }
 
-#User assigned managed identity -KV
+#User assigned managed identity - Key Vault
 resource "azurerm_user_assigned_identity" "admin" {
   name                = "sql-admin"
   location            = module.rg.location

@@ -22,13 +22,28 @@ variable "fe_webapi_name" {
   type = string
 }
 
-#Front-End app SVC Plan
+#Front-End app SKU
+variable "fe_webapi_sku" {
+  type = string
+}
+
+#Middleware app SVC Plan
 variable "mid_apsvc_plan" {
   type = string
 }
 
-#Front-End app SVC Name
+#Middleware app SVC Name
 variable "mid_webapi_name" {
+  type = string
+}
+
+#Middleware app svc KU
+variable "mid_webapi_sku" {
+  type = string
+}
+
+#Azure SQL Server SKU
+variable "mssqlsku" {
   type = string
 }
 

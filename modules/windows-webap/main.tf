@@ -1,4 +1,4 @@
-#Module for Windows Web App (Dotnet - v7.0)
+#Module for Windows Web App (Dotnet - v7.0)  
 resource "azurerm_windows_web_app" "windows_app" {
   name                = var.webapp_name
   location            = var.location
@@ -19,6 +19,7 @@ resource "azurerm_windows_web_app" "windows_app" {
 }
 
 #Application Insights - Integrated with this WebApp module
+
 resource "azurerm_application_insights" "app_insights" {
   name                = "acme-webapp-appinsights"
   location            = var.location

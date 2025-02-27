@@ -38,6 +38,7 @@ resource "azurerm_network_security_group" "sql_nsg" {
   }
 }
 
+#SQL SUbnet NSG Association
 resource "azurerm_subnet_network_security_group_association" "sql_subnet_association" {
   subnet_id                 = module.subnet.snet_id[1]
   network_security_group_id = azurerm_network_security_group.sql_nsg.id

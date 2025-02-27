@@ -1,4 +1,4 @@
-#Module for App SVC Plan
+#Module for App SVC plan
 resource "azurerm_service_plan" "app_svcplan" {
   name                = var.apsvc_name
   location            = var.location

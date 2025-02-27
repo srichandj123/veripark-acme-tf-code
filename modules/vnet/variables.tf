@@ -1,4 +1,4 @@
-#VNET name
+#VNET Name
 variable "vnet_name" {
   type    = string
   default = ""

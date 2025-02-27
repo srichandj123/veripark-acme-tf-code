@@ -5,7 +5,7 @@ module "mid-webapsvcplan" {
   rg_name    = module.rg.rg_name
   location   = module.rg.location
   os_type    = "Windows"
-  sku_name   = "P0v3"
+  sku_name   = var.mid_webapi_sku
 }
 #Middleware WebApp
 module "mid-webapp" {
